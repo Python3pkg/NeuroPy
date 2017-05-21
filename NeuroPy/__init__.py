@@ -1,1 +1,1 @@
-from NeuroPy import NeuroPy
+from .NeuroPy import NeuroPy

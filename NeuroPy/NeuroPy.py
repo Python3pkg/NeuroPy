@@ -77,14 +77,14 @@ class NeuroPy(object):
         # Try to connect to serial port and start a separate thread
         # for data collection
         if self.__threadRun == True:
-            print "Mindwave has already started!"
+            print("Mindwave has already started!")
             return
         
         if self.__srl == None:
             try:
                 self.__srl = serial.Serial(self.__serialPort,self.__serialBaudRate)
-            except serial.serialutil.SerialException, e:
-                print str(e)
+            except serial.serialutil.SerialException as e:
+                print(str(e))
                 return
         else:
             self.__srl.open()
@@ -206,7 +206,7 @@ class NeuroPy(object):
     @attention.setter
     def attention(self,value):
         self.__attention=value
-        if self.callBacksDictionary.has_key("attention"): #if callback has been set, execute the function
+        if "attention" in self.callBacksDictionary: #if callback has been set, execute the function
             self.callBacksDictionary["attention"](self.__attention)
             
     #meditation
@@ -217,7 +217,7 @@ class NeuroPy(object):
     @meditation.setter
     def meditation(self,value):
         self.__meditation=value
-        if self.callBacksDictionary.has_key("meditation"): #if callback has been set, execute the function
+        if "meditation" in self.callBacksDictionary: #if callback has been set, execute the function
             self.callBacksDictionary["meditation"](self.__meditation)
             
     #rawValue
@@ -228,7 +228,7 @@ class NeuroPy(object):
     @rawValue.setter
     def rawValue(self,value):
         self.__rawValue=value
-        if self.callBacksDictionary.has_key("rawValue"): #if callback has been set, execute the function
+        if "rawValue" in self.callBacksDictionary: #if callback has been set, execute the function
             self.callBacksDictionary["rawValue"](self.__rawValue)
 
     #delta
@@ -239,7 +239,7 @@ class NeuroPy(object):
     @delta.setter
     def delta(self,value):
         self.__delta=value
-        if self.callBacksDictionary.has_key("delta"): #if callback has been set, execute the function
+        if "delta" in self.callBacksDictionary: #if callback has been set, execute the function
             self.callBacksDictionary["delta"](self.__delta)
 
     #theta
@@ -250,7 +250,7 @@ class NeuroPy(object):
     @theta.setter
     def theta(self,value):
         self.__theta=value
-        if self.callBacksDictionary.has_key("theta"): #if callback has been set, execute the function
+        if "theta" in self.callBacksDictionary: #if callback has been set, execute the function
             self.callBacksDictionary["theta"](self.__theta)
 
     #lowAlpha
@@ -261,7 +261,7 @@ class NeuroPy(object):
     @lowAlpha.setter
     def lowAlpha(self,value):
         self.__lowAlpha=value
-        if self.callBacksDictionary.has_key("lowAlpha"): #if callback has been set, execute the function
+        if "lowAlpha" in self.callBacksDictionary: #if callback has been set, execute the function
             self.callBacksDictionary["lowAlpha"](self.__lowAlpha)
 
     #highAlpha
@@ -272,7 +272,7 @@ class NeuroPy(object):
     @highAlpha.setter
     def highAlpha(self,value):
         self.__highAlpha=value
-        if self.callBacksDictionary.has_key("highAlpha"): #if callback has been set, execute the function
+        if "highAlpha" in self.callBacksDictionary: #if callback has been set, execute the function
             self.callBacksDictionary["highAlpha"](self.__highAlpha)
 
 
@@ -284,7 +284,7 @@ class NeuroPy(object):
     @lowBeta.setter
     def lowBeta(self,value):
         self.__lowBeta=value
-        if self.callBacksDictionary.has_key("lowBeta"): #if callback has been set, execute the function
+        if "lowBeta" in self.callBacksDictionary: #if callback has been set, execute the function
             self.callBacksDictionary["lowBeta"](self.__lowBeta)
 
     #highBeta
@@ -295,7 +295,7 @@ class NeuroPy(object):
     @highBeta.setter
     def highBeta(self,value):
         self.__highBeta=value
-        if self.callBacksDictionary.has_key("highBeta"): #if callback has been set, execute the function
+        if "highBeta" in self.callBacksDictionary: #if callback has been set, execute the function
             self.callBacksDictionary["highBeta"](self.__highBeta)
 
     #lowGamma
@@ -306,7 +306,7 @@ class NeuroPy(object):
     @lowGamma.setter
     def lowGamma(self,value):
         self.__lowGamma=value
-        if self.callBacksDictionary.has_key("lowGamma"): #if callback has been set, execute the function
+        if "lowGamma" in self.callBacksDictionary: #if callback has been set, execute the function
             self.callBacksDictionary["lowGamma"](self.__lowGamma)
 
     #midGamma
@@ -317,7 +317,7 @@ class NeuroPy(object):
     @midGamma.setter
     def midGamma(self,value):
         self.__midGamma=value
-        if self.callBacksDictionary.has_key("midGamma"): #if callback has been set, execute the function
+        if "midGamma" in self.callBacksDictionary: #if callback has been set, execute the function
             self.callBacksDictionary["midGamma"](self.__midGamma)
     
     #poorSignal
@@ -328,7 +328,7 @@ class NeuroPy(object):
     @poorSignal.setter
     def poorSignal(self,value):
         self.__poorSignal=value
-        if self.callBacksDictionary.has_key("poorSignal"): #if callback has been set, execute the function
+        if "poorSignal" in self.callBacksDictionary: #if callback has been set, execute the function
             self.callBacksDictionary["poorSignal"](self.__poorSignal)
     
     #blinkStrength
@@ -339,5 +339,5 @@ class NeuroPy(object):
     @blinkStrength.setter
     def blinkStrength(self,value):
         self.__blinkStrength=value
-        if self.callBacksDictionary.has_key("blinkStrength"): #if callback has been set, execute the function
+        if "blinkStrength" in self.callBacksDictionary: #if callback has been set, execute the function
             self.callBacksDictionary["blinkStrength"](self.__blinkStrength)
